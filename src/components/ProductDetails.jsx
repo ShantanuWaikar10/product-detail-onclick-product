@@ -10,7 +10,6 @@ const ProductDetails = () => {
 
   const getDataFromApi = async () => {
     await axios.get("https://fakestoreapi.com/products").then((response) => {
-      console.log(response.data);
       setData(response.data);
       setLoading(false);
     });
@@ -31,10 +30,10 @@ const ProductDetails = () => {
         </>
       ) : (
         <>
-          <div className="px-32 py-10">
-            <div className="p-5 border border-gray-800 grid place-items-center">
+          <div className="px-5 lg:px-32 py-10">
+            <div className="p-5 border border-gray-800 rounded-lg grid place-items-center">
               <img
-                className="w-[20vw] h-[50vh]"
+                className="w-[50vw] lg:w-[20vw] h-[50vh]"
                 src={productDetail[0]?.image}
                 alt={productDetail[0]?.title}
               />
